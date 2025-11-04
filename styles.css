@@ -1,0 +1,249 @@
+/* ---------------------------------- */
+/* 1. Reset Básico e Tipografia Geral */
+/* ---------------------------------- */
+* {
+    /* Define o modelo de caixa para incluir padding e bordas na largura total */
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    background-color: #2f4156; /* Fundo ciano claro */
+    color: #000000;
+}
+
+/* Centraliza o conteúdo principal */
+header, main, footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ---------------------------------- */
+/* 2. Estilização do Header e Navegação (NAV) */
+/* ---------------------------------- */
+header {
+    background-color: #ffffff; /* Cor primária - Azul */
+    color: #567c8d;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+/* Menu de Navegação */
+nav ul {
+    list-style: none; /* Remove as bolinhas */
+    display: flex; /* Coloca os itens em linha */
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+nav a {
+    color: #567c8d;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* ---------------------------------- */
+/* 3. Estilização de Seções e Títulos */
+/* ---------------------------------- */
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #567c8d;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+h3 {
+    color: #567c8d;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Estilização para artigos (usado na página projetos.html) */
+article {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* ---------------------------------- */
+/* 4. Estilização do Formulário (cadastro.html) */
+/* ---------------------------------- */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Agrupamento Lógico (Fieldset) */
+fieldset {
+    border: 2px solid #567c8d;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    color: #567c8d;
+    padding: 0 10px;
+    font-size: 1.2em;
+}
+
+/* Agrupa Label e Input em uma linha para melhor controle */
+form div {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Coloca label e input em colunas, um abaixo do outro */
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="date"], 
+input[type="tel"], 
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #567c8d; /* Destaca o campo ativo */
+    outline: none;
+}
+
+/* Estilização do botão de envio */
+button[type="submit"] {
+    background-color: #28a745; /* Cor de sucesso - Verde */
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838; /* Escurece no hover */
+}
+
+/* Validação HTML5 Nativa (Estilização de Erro) */
+/* Se o campo for inválido (e o usuário interagiu com ele) */
+input:invalid:not(:placeholder-shown) {
+    border-color: #dc3545; /* Vermelho para erro */
+}
+
+/* ---------------------------------- */
+/* 5. Estilização do Footer */
+/* ---------------------------------- */
+footer {
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 30px;
+    color: #777;
+    font-size: 0.9em;
+    border-top: 1px solid #ccc;
+}
+
+/* --- Estilização de Imagens --- */
+img {
+    max-width: 100%; /* Garante que imagens não excedam a largura do seu container */
+    height: auto;    /* Mantém a proporção da imagem */
+    display: block;  /* Remove espaços extras abaixo da imagem */
+}
+
+/* Imagens grandes, como banners */
+.img-full-width {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Cantos arredondados */
+}
+
+/* Imagens que podem flutuar à esquerda do texto */
+.img-left {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px; /* Para não grudar no texto abaixo */
+    width: 150px; /* Tamanho fixo para imagens menores */
+    border-radius: 8px;
+}
+
+/* Imagens de projetos ou galerias */
+.img-project {
+    width: 100%; /* Ajusta à largura do artigo */
+    max-height: 200px; /* Limita a altura para não ficarem muito grandes */
+    object-fit: cover; /* Recorta a imagem para cobrir a área se não for a mesma proporção */
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Ícones pequenos no cabeçalho, etc. */
+.header-icon {
+    width: 50px; /* Tamanho do ícone */
+    height: 50px;
+    object-fit: contain; /* Garante que o ícone inteiro apareça sem corte */
+    margin: 0 auto 10px auto; /* Centraliza e adiciona margem inferior */
+}
+
+/* --- Estilização para Valores e Imagem Lateral --- */
+.valores-e-imagem {
+    display: flex; /* Habilita o Flexbox */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    gap: 30px; /* Espaçamento entre a lista e a imagem */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas pequenas */
+    margin-top: 20px; /* Espaçamento acima deste bloco */
+}
+
+.valores-e-imagem ul {
+    flex: 1; 
+    list-style: disc;
+    margin-left: 20px;
+    min-width: 200px;
+}
+
+.img-valores {
+    flex-shrink: 0;
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
